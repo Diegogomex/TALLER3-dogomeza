@@ -22,10 +22,10 @@ class TestBoaConstrictor(unittest.TestCase):
         self.assertEqual(self.boaC.ratones_comidos, 1)  # Después de comer un ratón
 
     def test_comer_demasiados_ratones(self):
-        # Prueba que no se pueden comer más de 10 ratones
-        for i in range(11):# Supera la cantidad de ratones permitidos, por lo que deberia dar error
+        # Prueba que ahora no se pueden comer más de 20 ratones
+        for i in range(21):# Supera la cantidad de ratones permitidos, por lo que deberia dar error
             self.boaC.comer_raton()
-        self.assertEqual(self.boaC.ratones_comidos, 10) # Límite de ratones comidos permitidos
+        self.assertEqual(self.boaC.ratones_comidos, 20) # Límite de ratones comidos permitidos
         with self.assertRaises(ValueError):
             self.boaC.comer_raton()
 
